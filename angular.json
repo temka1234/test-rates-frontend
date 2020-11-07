@@ -47,7 +47,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "less"
+          "style": "less",
+          "changeDetection": "OnPush"
         }
       },
       "root": "projects/web",
