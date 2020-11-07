@@ -1,0 +1,25 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <mat-card class="rates">
+    <h2 class="rates__header" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <mat-icon>trending_up</mat-icon>
+      <span>Rates exchange</span>
+    </h2>
+    <mat-progress-bar mode="indeterminate" *ngIf="loading$ | ngrxPush else content"></mat-progress-bar>
+    <ng-template #content>
+      <div fxLayout="column" fxLayoutGap="10px">
+        <nav class="rates__nav" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center">
+          <button type="button" mat-flat-button
+            routerLinkActive #rlaTable="routerLinkActive" [color]="rlaTable.isActive ? 'primary' : 'default'"
+            routerLink="/table"><mat-icon inline="true">table_chart</mat-icon> Table</button>
+          <button type="button" mat-flat-button color="primary"
+            routerLinkActive #rlaChart="routerLinkActive" [color]="rlaChart.isActive ? 'primary' : 'default'"
+            routerLink="/chart"><mat-icon inline="true">leaderboard</mat-icon> Chart</button>
+        </nav>
+
+        <div>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </ng-template>
+  </mat-card>
+</div>

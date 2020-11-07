@@ -1,0 +1,31 @@
+<ng-container *ngIf="{
+  timeseries: timeseries$ | ngrxPush,
+  columns: columns$ | ngrxPush,
+  codes: codes$ | ngrxPush,
+  stats: stats$ | ngrxPush
+} as ctx">
+  <table mat-table [dataSource]="ctx.timeseries" class="rates-table">
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let element">{{ element.date | date : 'MMM dd, yyy' }}</td>
+    </ng-container>
+
+    <ng-container *ngFor="let code of ctx.codes" [matColumnDef]="code">
+      <th mat-header-cell *matHeaderCellDef>{{ code }}</th>
+      <td mat-cell *matCellDef="let element">
+        <ng-container *ngIf="element[code] else emptyValue">
+          <span class="rates-table__currency"
+            [class.rates-table__currency_min]="ctx.stats[code] && ctx.stats[code].min === element[code]"
+            [class.rates-table__currency_max]="ctx.stats[code] && ctx.stats[code].max === element[code]"
+            >{{ element[code] }}
+          </span>
+        </ng-container>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="ctx.columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: ctx.columns;"></tr>
+  </table>
+</ng-container>
+
+<ng-template #emptyValue>-</ng-template>
