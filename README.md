@@ -1,27 +1,26 @@
-# ExchangeRates
+# Rates exchange (fronted)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+Fronted of testing task for rates exchange
 
-## Development server
+## Task description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Implement a page with the dynamics of the dollar and euro exchange rates for the last month.  
+There should be 2 tabs on the page: one with a table, the other with a chart.  
+Mark with color maximum and minimum values in table.  
+Get prices from the page https://www.cbr.ru/currency_base/daily/?UniDbQuery.Posted=True&UniDbQuery.To=xx.xx.xxxx.  
+It is necessary to minimize the number of hits to the source site.  
 
-## Code scaffolding
+Use:
+* Spring Boot
+* Angular (8-10)
+* Angular Material
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+* Install **node.js**
+* Clone project to specified folder
+* Run `npm install` from command line
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Run application
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Run `ng serve` from command line
