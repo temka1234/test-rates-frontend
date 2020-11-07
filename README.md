@@ -4,7 +4,7 @@ Fronted of testing task for rates exchange
 
 ## Installation
 
-* Install last node.js
+* Install **node.js**
 * Clone project to specified folder
 * Run `npm install` from command line
 
